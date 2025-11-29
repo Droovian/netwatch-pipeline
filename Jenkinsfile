@@ -1,6 +1,10 @@
 pipeline {
     agent { label 'Home-Network-Scanner' }
     
+    triggers {
+        cron('H * * * *') 
+    }
+
     environment {
         // Keep secrets here or use Jenkins Credentials Binding for higher security
         DB_HOST = credentials('netwatch-db-host') 
