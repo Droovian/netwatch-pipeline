@@ -2,6 +2,9 @@ pipeline {
     agent { label 'Home-Network-Scanner' }
     
     triggers {
+
+        githubPush()
+        
         cron('H * * * *') 
     }
 
