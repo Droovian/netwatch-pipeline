@@ -3,8 +3,8 @@ pipeline {
     
     environment {
         // Keep secrets here or use Jenkins Credentials Binding for higher security
-        DB_HOST = 'YOUR_AWS_ELASTIC_IP' 
-        DB_PASS = 'supersecretpass'
+        DB_HOST = credentials('netwatch-db-host') 
+        DB_PASS = credentials('netwatch-db-pass')
         DB_USER = 'admin'
         DB_NAME = 'netwatch'
     }
